@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Car & Tempo Travels – Comfortable Rides in Pastel Style</title>
+  <meta name="description" content="Affordable car & tempo traveller services for city, outstation, airport transfers. Clean fleet, courteous drivers, 24x7 support." />
+
+  <!-- Open Graph / SEO -->
+  <meta property="og:title" content="Car & Tempo Travels – Comfortable Rides" />
+  <meta property="og:description" content="Book cars & tempo travellers for city rides, outstation trips, and airport transfers. Clean, comfortable, and friendly service." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com" />
+  <meta property="og:image" content="https://dummyimage.com/1200x630/e7d7ff/1f2937.png&text=Car+%26+Tempo+Travels" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --mint:#C8F7DC;     /* mint */
+      --lav:#E7D7FF;      /* lavender */
+      --peach:#FFD8C2;    /* peach */
+      --sky:#D7EDFF;      /* sky blue */
+      --ink:#1F2937;      /* dark text */
+      --ink-soft:#374151; /* soft text */
+      --white:#ffffff;
+      --shadow:0 10px 25px rgba(31,41,55,.08);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);scroll-behavior:smooth;background:linear-gradient(180deg,var(--sky),var(--white) 35%, var(--peach) 35.1%, var(--white) 70%, var(--lav) 70.1%);}
+
+    /* Layout */
+    .container{width:min(1200px,90%);margin-inline:auto}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(31,41,55,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand .logo{width:40px;height:40px;border-radius:50%;background: radial-gradient(circle at 30% 30%, var(--mint), var(--sky));box-shadow:var(--shadow)}
+    nav a{color:var(--ink);text-decoration:none;font-weight:600;margin-left:18px;padding:10px 14px;border-radius:999px}
+    nav a:hover, nav a.active{background:var(--mint)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;padding:60px 0}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:var(--lav);padding:8px 12px;border-radius:999px;font-weight:600}
+    .hero h1{font-size:clamp(28px,4vw,46px);line-height:1.1;margin:14px 0}
+    .hero p{color:var(--ink-soft);font-size:1.05rem}
+    .cta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;border:2px solid transparent;font-weight:700;text-decoration:none;box-shadow:var(--shadow)}
+    .btn-primary{background:var(--peach)}
+    .btn-outline{background:var(--white);border-color:var(--ink);}
+    .hero-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .car-illus{aspect-ratio:4/3;border-radius:var(--radius);background:linear-gradient(135deg,var(--sky),var(--mint));position:relative;overflow:hidden}
+    .wheel{position:absolute;bottom:16px;width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#222,#000);box-shadow:inset 0 0 0 6px #999}
+    .wheel.left{left:16px}
+    .wheel.right{left:calc(100% - 70px)}
+
+    /* Services */
+    section{padding:60px 0}
+    .section-title{font-size:clamp(22px,3vw,34px);margin:0 0 18px}
+    .muted{color:var(--ink-soft)}
+    .grid{display:grid;gap:18px}
+    .grid-4{grid-template-columns:repeat(4,1fr)}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:960px){
+      .hero{grid-template-columns:1fr}
+      .grid-4{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      .grid-4,.grid-3,.grid-2{grid-template-columns:1fr}
+    }
+    .card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .card h3{margin:8px 0}
+
+    /* Trust badges */
+    .badges{display:flex;gap:10px;flex-wrap:wrap}
+    .badge-pill{background:var(--mint);padding:8px 12px;border-radius:999px;font-weight:600}
+
+    /* Testimonials */
+    .slider{position:relative;overflow:hidden;border-radius:var(--radius);box-shadow:var(--shadow);background:var(--white)}
+    .slides{display:flex;transition:transform .6s ease}
+    .slide{min-width:100%;padding:22px}
+    .dots{display:flex;gap:8px;justify-content:center;margin-top:10px}
+    .dot{width:10px;height:10px;border-radius:50%;background:#cbd5e1;cursor:pointer}
+    .dot.active{background:#475569}
+
+    /* Info page blocks */
+    .tag{display:inline-block;background:var(--sky);padding:6px 10px;border-radius:999px;font-weight:600}
+    .faq details{background:var(--white);padding:14px;border-radius:14px;box-shadow:var(--shadow)}
+    .faq summary{cursor:pointer;font-weight:700}
+
+    /* Contact */
+    form{display:grid;gap:12px}
+    input, textarea{width:100%;padding:12px;border-radius:12px;border:1.5px solid #e5e7eb;outline:none}
+    input:focus, textarea:focus{border-color:#94a3b8;box-shadow:0 0 0 4px rgba(148,163,184,.25)}
+    .map{width:100%;height:300px;border:0;border-radius:var(--radius);box-shadow:var(--shadow)}
+
+    /* Footer */
+    footer{background:rgba(255,255,255,.9);border-top:1px solid rgba(31,41,55,.06)}
+    .footer-grid{display:grid;gap:18px;grid-template-columns:2fr 1fr 1fr}
+    @media (max-width:840px){.footer-grid{grid-template-columns:1fr}}
+
+    /* Floating WhatsApp */
+    .wa{position:fixed;right:18px;bottom:18px;display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:#25D366;color:#113;box-shadow:var(--shadow);font-weight:800;text-decoration:none}
+  </style>
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="logo" aria-hidden="true"></span>Car & Tempo Travels</div>
+      <nav aria-label="Primary">
+        <a href="#home" class="active">Home</a>
+        <a href="#info">Info</a>
+        <a href="#contacts">Contacts</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HOME -->
+  <main id="home" class="container hero" aria-labelledby="home-title">
+    <div>
+      <span class="badge">Pastel-Perfect Rides ✨</span>
+      <h1 id="home-title">Comfortable Cars & Tempo Travellers for Every Trip</h1>
+      <p class="muted">City commutes, outstation getaways, or airport runs — ride in comfort with clean vehicles, verified drivers, and transparent pricing.</p>
+      <div class="cta" role="group" aria-label="Primary actions">
+        <a class="btn btn-primary" href="tel:+911234567890">📞 Call Now</a>
+        <a class="btn btn-outline" href="#contacts">📝 Book Ride</a>
+      </div>
+
+      <section aria-labelledby="services-title" style="margin-top:28px">
+        <h2 id="services-title" class="section-title">Our Services</h2>
+        <div class="grid grid-4">
+          <div class="card">
+            <h3>Car Hire</h3>
+            <p class="muted">Sedan & SUV options for business or family trips.</p>
+          </div>
+          <div class="card">
+            <h3>Tempo Traveller</h3>
+            <p class="muted">9–26 seater AC/non‑AC for group tours & events.</p>
+          </div>
+          <div class="card">
+            <h3>Outstation</h3>
+            <p class="muted">One‑way and round‑trip packages with pro drivers.</p>
+          </div>
+          <div class="card">
+            <h3>Airport Transfers</h3>
+            <p class="muted">On‑time pick‑ups with live flight tracking.</p>
+          </div>
+        </div>
+
+        <div class="badges" style="margin-top:16px">
+          <span class="badge-pill">✅ Sanitized Fleet</span>
+          <span class="badge-pill" style="background:var(--peach)">🕒 24x7 Support</span>
+          <span class="badge-pill" style="background:var(--lav)">💳 UPI / Card / Cash</span>
+          <span class="badge-pill" style="background:var(--sky)">⭐ 4.8/5 Rated</span>
+        </div>
+      </section>
+    </div>
+
+    <div class="hero-card" aria-hidden="true">
+      <div class="car-illus">
+        <div class="wheel left"></div>
+        <div class="wheel right"></div>
+      </div>
+      <div class="slider" style="margin-top:14px">
+        <div class="slides" id="slides">
+          <div class="slide">“Clean car, smooth ride, and very polite driver.” — <strong>Ananya</strong></div>
+          <div class="slide">“Our group tempo was comfy and on time. Great value!” — <strong>Rahul</strong></div>
+          <div class="slide">“Airport pickup was seamless. Will book again.” — <strong>Meera</strong></div>
+        </div>
+      </div>
+      <div class="dots" id="dots" aria-label="Testimonial navigation"></div>
+    </div>
+  </main>
+
+  <!-- INFO -->
+  <section id="info" aria-labelledby="info-title">
+    <div class="container">
+      <span class="tag">Info</span>
+      <h2 id="info-title" class="section-title">About & Fleet Highlights</h2>
+      <p class="muted">We’re a local travel partner focused on safety, punctuality, and comfort. All vehicles undergo routine checks and drivers are background‑verified.</p>
+
+      <div class="grid grid-3" style="margin-top:18px">
+        <div class="card">
+          <h3>Fleet Types</h3>
+          <ul>
+            <li>Sedans (4–5 seater)</li>
+            <li>SUVs (6–7 seater)</li>
+            <li>Tempo Travellers (9–26 seater)</li>
+            <li>AC & Non‑AC options</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Starting Prices*</h3>
+          <ul>
+            <li>City rides from ₹12/km</li>
+            <li>Outstation from ₹14/km</li>
+            <li>Airport transfers from ₹699</li>
+            <li>Driver allowance as applicable</li>
+          </ul>
+          <p class="muted" style="font-size:.9rem">*Indicative. Final quote depends on route, hours, and vehicle.</p>
+        </div>
+        <div class="card">
+          <h3>Service Areas</h3>
+          <p class="muted">City & suburbs • Inter‑city (South & West India) • Pilgrimage routes • Weekend getaways</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:18px">
+        <h3>FAQs</h3>
+        <div class="faq grid grid-2">
+          <details>
+            <summary>How do I get a quote?</summary>
+            <p>Use the form on the Contacts page or WhatsApp us with your route, dates, headcount, and luggage details.</p>
+          </details>
+          <details>
+            <summary>Is there a minimum booking?</summary>
+            <p>Local usage is billed hourly with a minimum slab; outstation is billed per km with driver allowance.</p>
+          </details>
+          <details>
+            <summary>Do you provide child seats?</summary>
+            <p>Yes, on request and subject to availability. Please mention while booking.</p>
+          </details>
+          <details>
+            <summary>What are the payment options?</summary>
+            <p>UPI, cards, net banking, and cash are accepted. Invoice provided for all bookings.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section id="contacts" aria-labelledby="contacts-title">
+    <div class="container">
+      <span class="tag">Contacts</span>
+      <h2 id="contacts-title" class="section-title">Get in Touch</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <form id="contact-form" aria-label="Contact form">
+            <div class="grid grid-2">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" placeholder="Your full name" required />
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="10‑digit number" required />
+              </div>
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" />
+            </div>
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Trip date, route, passengers, luggage..." required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Send Enquiry</button>
+            <p id="form-status" class="muted" role="status" aria-live="polite" style="margin-top:8px"></p>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>Contact Details</h3>
+          <p><strong>Phone:</strong> <a href="tel:+911234567890">+91 12345 67890</a></p>
+          <p><strong>Email:</strong> <a href="mailto:hello@car-tempotravels.example">hello@car-tempotravels.example</a></p>
+          <p><strong>Hours:</strong> Mon–Sun, 7:00 AM – 11:00 PM</p>
+          <iframe class="map" title="Service area map" loading="lazy" allowfullscreen
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.001!2d77.5946!3d12.9716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z12KwNTgqMTcuNyJOIDc3wrAzNSc0MC41IkU!5e0!3m2!1sen!2sin!4v0000000000"></iframe>
+          <div style="margin-top:10px" class="muted">Tap to chat on WhatsApp or call us for instant quotes.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container" style="padding:28px 0">
+      <div class="footer-grid">
+        <div>
+          <strong>Car & Tempo Travels</strong>
+          <p class="muted">Safe, clean, and comfy rides for every occasion.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#info">Info</a></li>
+            <li><a href="#contacts">Contacts</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <p>
+            <a href="#">Facebook</a> · <a href="#">Instagram</a> · <a href="#">X</a>
+          </p>
+        </div>
+      </div>
+      <p class="muted">© <span id="year"></span> Car & Tempo Travels. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a class="wa" href="https://wa.me/911234567890?text=Hi%20I%20want%20to%20book%20a%20ride" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬 WhatsApp</a>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Testimonial slider
+    const slides = document.getElementById('slides');
+    const dotsWrap = document.getElementById('dots');
+    const total = slides.children.length;
+    let idx = 0;
+
+    function renderDots(){
+      for(let i=0;i<total;i++){
+        const d=document.createElement('button');
+        d.className='dot'+(i===0?' active':'');
+        d.setAttribute('aria-label','Go to slide '+(i+1));
+        d.addEventListener('click',()=>go(i));
+        dotsWrap.appendChild(d);
+      }
+    }
+    function go(i){
+      idx = i%total; if(idx<0) idx = total-1;
+      slides.style.transform = `translateX(-${idx*100}%)`;
+      [...dotsWrap.children].forEach((dot,n)=>dot.classList.toggle('active', n===idx));
+    }
+    renderDots();
+    setInterval(()=>go(idx+1), 4000);
+
+    // Simple client-side form handler (no backend):
+    document.getElementById('contact-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = this.name.value.trim();
+      const phone = this.phone.value.trim();
+      const email = this.email.value.trim();
+      const message = this.message.value.trim();
+      const status = document.getElementById('form-status');
+
+      if(!name || !phone || !message){
+        status.textContent = 'Please fill in the required fields.';
+        return;
+      }
+      // Build WhatsApp prefill as a fallback "submission"
+      const text = encodeURIComponent(`New enquiry:%0AName: ${name}%0APhone: ${phone}%0AEmail: ${email}%0AMessage: ${message}`);
+      const url = `https://wa.me/911234567890?text=${text}`;
+      status.textContent = 'Opening WhatsApp with your enquiry...';
+      window.open(url, '_blank');
+      this.reset();
+    });
+
+    // Smoothly highlight active nav link on scroll
+    const sections = ['home','info','contacts'].map(id=>document.getElementById(id));
+    const links = [...document.querySelectorAll('header nav a')];
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          const id = entry.target.id;
+          links.forEach(a=>a.classList.toggle('active', a.getAttribute('href')==='#'+id));
+        }
+      })
+    },{rootMargin:'-50% 0px -45% 0px',threshold:0});
+    sections.forEach(sec=>obs.observe(sec));
+  </script>
+</body>
+</html>
